@@ -68,10 +68,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-XAMPP 403 修改目录权限" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-phpstorm 连接 GitLab 配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/03/14/XAMPP 403 修改目录权限/" class="article-date">
-  <time datetime="2017-03-14T05:06:44.270Z" itemprop="datePublished">2017-03-14</time>
+    <a href="/2017/03/14/phpstorm 连接 GitLab 配置/" class="article-date">
+  <time datetime="2017-03-14T06:59:28.920Z" itemprop="datePublished">2017-03-14</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/14/XAMPP 403 修改目录权限/">XAMPP 403 修改目录权限</a>
+      <a class="article-title" href="/2017/03/14/phpstorm 连接 GitLab 配置/">phpstorm 连接 GitLab 配置</a>
     </h1>
   
 
@@ -90,15 +90,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>XAMPP apache目录无权限403 错误解决方案<br>打开apache安装目录找到httpd.conf 大概229行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    xxxx</div><div class="line">    xxxx  不记得了  - -！！ </div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
-<p> 修改为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    Options Indexes FollowSymLinks Includes ExecCGI</div><div class="line">    AllowOverride All</div><div class="line">    Order allow,deny</div><div class="line">    Allow from all</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
-<p> OK</p>
+        <p>这里的环境是 windows 下 phpstorm  用的是 ssh 连接 gitlab</p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>首先安装windows 下的Git客户端<br><a href="https://git-for-windows.github.io/" target="_blank" rel="external">传送门</a><br>默认下一步安装  一键到底</p>
+<p>OK<br>安装好以后 打开 Git bash 输入如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">'你的git邮箱帐号'</span></div></pre></td></tr></table></figure>
+<p>好的 接下来 回车 然后 再 回车 再 回车 直到成功生成 SSH 证书<br>ok 确认 用户目录 生成了 .ssh 文件夹 里面有 id_rsa(私钥) 与 id_rsa.pub(公钥)两个文件<br>记事本 打开 id_rsa.pub 复制全部内容 在gitlab后台添加ssh key 添加进去</p>
+<p>至此准备工作已经做完下面关键是 配置phpstorm 这里用的是 phpstorm 2016版</p>
+<p>选择配置git.exe安装目录<br><img src="http://omsgfxs05.bkt.clouddn.com/pf.png" alt="image"><br>到GitLab后台把这个SSH 地址复制出来<br><img src="http://omsgfxs05.bkt.clouddn.com/p2.png" alt="image"><br><img src="http://omsgfxs05.bkt.clouddn.com/p1.png" alt="image"><br><img src="http://omsgfxs05.bkt.clouddn.com/pxx.png" alt="image"><br>可以clone了<br>下面创建一个本地的git版本库<br><img src="http://omsgfxs05.bkt.clouddn.com/p4f.png" alt="image"><br><img src="http://omsgfxs05.bkt.clouddn.com/p4.png" alt="image"><br>Ok接下来就是 在项目上右键Git 菜单 add 与 commit操作了<br><img src="http://omsgfxs05.bkt.clouddn.com/p5.png" alt="image"><br>我每次选择commit and push                               </p>
+<p>行了 尽情的测试 提交代码吧~~~</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/14/XAMPP 403 修改目录权限/" data-id="cj096o77s00010wqehndisz0x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/14/phpstorm 连接 GitLab 配置/" data-id="cj096tz570002r8qeq0qjkgzo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,7 +115,7 @@
     <article id="post-Windows下使用Hexo+Github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/14/Windows下使用Hexo+Github搭建个人博客/" class="article-date">
-  <time datetime="2017-03-14T04:56:29.083Z" itemprop="datePublished">2017-03-14</time>
+  <time datetime="2017-03-14T06:59:18.822Z" itemprop="datePublished">2017-03-14</time>
 </a>
     
   </div>
@@ -143,13 +147,53 @@
 <h4 id="恭喜你-这是通向成功的最后一步-将本地hexo项目托管到Github"><a href="#恭喜你-这是通向成功的最后一步-将本地hexo项目托管到Github" class="headerlink" title="恭喜你 这是通向成功的最后一步 将本地hexo项目托管到Github"></a>恭喜你 这是通向成功的最后一步 将本地hexo项目托管到Github</h4><p>打开hexo目录 修改配置文件_config.yml。<br><img src="http://omsgfxs05.bkt.clouddn.com/7.png" alt="image">  </p>
 <p>最后一步 安装hexo-deployer-git插件  把代码托管到Github上<br>进入 hexo 目录  右键 Git Bash Here<br>npm install hexo-deployer-git –save<br>最后提交代码(注:每次修改本地主题，都需要执行以下代码)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean      </div><div class="line">hexo generator <span class="comment">#简写成 hexo g    </span></div><div class="line">hexo deploy <span class="comment">#简写成 hexo d</span></div></pre></td></tr></table></figure></p>
 <p>好了 打开你的 <a href="http://你的帐号.github.io" target="_blank" rel="external">http://你的帐号.github.io</a> 看看你辛苦的成果吧~~</p>
-<h4 id="好那么问题又来了-如何写文章？"><a href="#好那么问题又来了-如何写文章？" class="headerlink" title="好那么问题又来了  如何写文章？"></a>好那么问题又来了  如何写文章？</h4><p>我是通过有道云笔记客户端 新建Markdown 编辑录入文章后保存到出md文件然后把md文件放入hexo网站所在位置下的source\_posts目录<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean      </div><div class="line">hexo g    </div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<h4 id="好那么问题又来了-如何写文章？"><a href="#好那么问题又来了-如何写文章？" class="headerlink" title="好那么问题又来了  如何写文章？"></a>好那么问题又来了  如何写文章？</h4><p>我是通过有道云笔记客户端 新建Markdown 编辑录入文章后保存导出md文件然后把md文件放入hexo网站所在位置下的source\_posts目录<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean      </div><div class="line">hexo g    </div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
 <p>OK 文章发布成功~Congratulations！！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/14/Windows下使用Hexo+Github搭建个人博客/" data-id="cj096o77k00000wqewgqaqyue" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/14/Windows下使用Hexo+Github搭建个人博客/" data-id="cj096tz4v0000r8qelsge1ku0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-XAMPP 403 修改目录权限" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/14/XAMPP 403 修改目录权限/" class="article-date">
+  <time datetime="2017-03-14T05:06:44.270Z" itemprop="datePublished">2017-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/14/XAMPP 403 修改目录权限/">XAMPP 403 修改目录权限</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XAMPP apache目录无权限403 错误解决方案<br>打开apache安装目录找到httpd.conf 大概229行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    xxxx</div><div class="line">    xxxx  不记得了  - -！！ </div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p> 修改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    Options Indexes FollowSymLinks Includes ExecCGI</div><div class="line">    AllowOverride All</div><div class="line">    Order allow,deny</div><div class="line">    Allow from all</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
+<p> OK</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/14/XAMPP 403 修改目录权限/" data-id="cj096tz530001r8qemex675lq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,11 +233,15 @@
       <ul>
         
           <li>
-            <a href="/2017/03/14/XAMPP 403 修改目录权限/">XAMPP 403 修改目录权限</a>
+            <a href="/2017/03/14/phpstorm 连接 GitLab 配置/">phpstorm 连接 GitLab 配置</a>
           </li>
         
           <li>
             <a href="/2017/03/14/Windows下使用Hexo+Github搭建个人博客/">Windows下使用Hexo+Github搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/14/XAMPP 403 修改目录权限/">XAMPP 403 修改目录权限</a>
           </li>
         
       </ul>
