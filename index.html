@@ -68,6 +68,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-XAMPP 403 修改目录权限" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/14/XAMPP 403 修改目录权限/" class="article-date">
+  <time datetime="2017-03-14T05:06:44.270Z" itemprop="datePublished">2017-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/14/XAMPP 403 修改目录权限/">XAMPP 403 修改目录权限</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>XAMPP apache目录无权限403 错误解决方案<br>打开apache安装目录找到httpd.conf 大概229行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    xxxx</div><div class="line">    xxxx  不记得了  - -！！ </div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p> 修改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">    Options Indexes FollowSymLinks Includes ExecCGI</div><div class="line">    AllowOverride All</div><div class="line">    Order allow,deny</div><div class="line">    Allow from all</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
+<p> OK</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/14/XAMPP 403 修改目录权限/" data-id="cj092ss2m0001xsqe9gkzvmbi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Windows下使用Hexo+Github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/14/Windows下使用Hexo+Github搭建个人博客/" class="article-date">
@@ -109,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/14/Windows下使用Hexo+Github搭建个人博客/" data-id="cj092ft4l0000nsqey2wjc25i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/14/Windows下使用Hexo+Github搭建个人博客/" data-id="cj092ss2g0000xsqex8cw4qjt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,6 +187,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/14/XAMPP 403 修改目录权限/">XAMPP 403 修改目录权限</a>
+          </li>
         
           <li>
             <a href="/2017/03/14/Windows下使用Hexo+Github搭建个人博客/">Windows下使用Hexo+Github搭建个人博客</a>
